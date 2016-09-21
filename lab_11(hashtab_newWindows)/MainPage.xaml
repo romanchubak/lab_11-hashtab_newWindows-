@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="lab_11_hashtab_newWindows_.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:lab_11_hashtab_newWindows_"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+	<Page.Resources>
+		<Color x:Key="Color1">Black</Color>
+		<LinearGradientBrush x:Key="Brush1" EndPoint="0.5,1" StartPoint="0.5,0">
+			<GradientStop Color="{StaticResource Color1}" Offset="0"/>
+			<GradientStop Color="#FF800707" Offset="1"/>
+		</LinearGradientBrush>
+		<MenuFlyout x:Name="menuflyout1" x:Key="FlyoutBase1" Placement="Bottom"/>
+	</Page.Resources>
+
+    <Grid Background="{StaticResource Brush1}">
+    	<Button x:Name="button1" Content="Створити HashTab" HorizontalAlignment="Center" Height="124" Margin="485,70,485,0" VerticalAlignment="Top" FontSize="32" Width="396">
+    		<Button.Flyout>
+    			<Flyout x:Name="flyout1" Placement="Bottom" Closed="flyout1_Closed">
+    				<Grid Height="71" Width="253">
+    					<TextBox x:Name="flyout1_textbox1" HorizontalAlignment="Left" Margin="148,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="45"/>
+    					<TextBlock HorizontalAlignment="Left" Margin="41,10,0,0" TextWrapping="Wrap" Text="Введіть розмір таблиці:" VerticalAlignment="Top" Height="45" Width="59"/>
+    				</Grid>
+    			</Flyout>
+    		</Button.Flyout>
+    	</Button>
+    	<Button x:Name="button2" Content="Додати запис" HorizontalAlignment="Left" Margin="60,322,0,322" VerticalAlignment="Center" FontSize="32" Width="396" Height="124">
+    		<Button.Flyout>
+    			<Flyout x:Name="flyout2" Placement="Right">
+    				<Grid Height="211" Width="402">
+    					<TextBlock HorizontalAlignment="Left" Margin="19,24,0,0" TextWrapping="Wrap" Text="Введіть прізвище:" VerticalAlignment="Top" FontSize="16"/>
+    					<TextBlock HorizontalAlignment="Left" Margin="19,61,0,0" TextWrapping="Wrap" Text="Введіть номер авто:" VerticalAlignment="Top" FontSize="16"/>
+    					<TextBlock HorizontalAlignment="Left" Margin="19,98,0,0" TextWrapping="Wrap" Text="Введіть марку авто:" VerticalAlignment="Top" FontSize="16"/>
+    					<TextBox x:Name="flyout2_textbox1" HorizontalAlignment="Left" Margin="202,16,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="16" Width="190"/>
+    					<TextBox x:Name="flyout2_textbox2" HorizontalAlignment="Left" Margin="202,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="16" Width="190"/>
+    					<TextBox x:Name="flyout2_textbox3" HorizontalAlignment="Left" Margin="202,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="16" Width="190"/>
+    					<Button x:Name="flyout2_button1" Content="Додати запис" HorizontalAlignment="Left" Margin="138,149,0,0" VerticalAlignment="Top" Width="127" Click="flyout2_button1_Click"/>
+    				</Grid>
+    			</Flyout>
+    		</Button.Flyout>
+    	</Button>
+    	<Button x:Name="button3" Content="Видалити запис" HorizontalAlignment="Right" Margin="0,322,60,322" VerticalAlignment="Center" FontSize="32" Width="396" Height="124">
+    		<Button.Flyout>
+    			<Flyout Placement="Left">
+    				<Grid Height="184" Width="278">
+    					<TextBlock HorizontalAlignment="Left" Margin="27,10,0,0" TextWrapping="Wrap" Text="Введіть прізвище власника, машину якого хочете видалити:" VerticalAlignment="Top" FontSize="16"/>
+    					<TextBox x:Name="flyout3_textbox1" HorizontalAlignment="Left" Height="24" Margin="34,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" FontSize="16"/>
+    					<Button x:Name="flyout3_button1" Content="Видалити запис даного власника:" HorizontalAlignment="Left" Margin="7,131,0,0" VerticalAlignment="Top" Width="264" Height="43" Click="flyout3_button1_Click"/>
+    				</Grid>
+    			</Flyout>
+    		</Button.Flyout>
+    	</Button>
+    	<Button x:Name="button4" Content="Переглянути записи" HorizontalAlignment="Center" Margin="485,0,485,70" VerticalAlignment="Bottom" FontSize="32" Height="124" Width="396" Click="button4_Click">
+    		<Button.Flyout>
+    			<Flyout>
+    				<Grid Width="411" Height="290">
+    					<Grid.RowDefinitions>
+    						<RowDefinition Height="42*"/>
+    						<RowDefinition Height="103*"/>
+    					</Grid.RowDefinitions>
+    					<TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+    						<Run FontSize="16" Text="Прізвище"/>
+    					</TextBlock>
+    					<TextBlock HorizontalAlignment="Left" Margin="159,10,0,0" TextWrapping="Wrap" Text="Номер авто" VerticalAlignment="Top" FontSize="16"/>
+    					<TextBlock HorizontalAlignment="Left" Margin="301,10,0,0" TextWrapping="Wrap" Text="Марка авто" VerticalAlignment="Top" FontSize="16"/>
+    					<TextBox x:Name="flyout4_textbox1" HorizontalAlignment="Left" Margin="0,29,0,17" TextWrapping="Wrap" Text="" Width="131" FontSize="12" Grid.RowSpan="2"/>
+    					<TextBox x:Name="flyout4_textbox2" HorizontalAlignment="Left" Margin="149,29,0,10" TextWrapping="Wrap" Text="" Width="121" FontSize="12" Grid.RowSpan="2"/>
+    					<TextBox x:Name="flyout4_textbox3" HorizontalAlignment="Left" Margin="293,29,0,10" TextWrapping="Wrap" Text="" Width="118" FontSize="12" Grid.RowSpan="2"/>
+    				</Grid>
+    			</Flyout>
+    		</Button.Flyout>
+    	</Button>
+
+    </Grid>
+</Page>
